@@ -1,0 +1,12 @@
+version: "3"
+services:
+  redis:
+    image: redis:3.2.1
+    command: redis-server --appendonly yes
+    ports: ["11020:6379"]
+    volumes:
+      - redis-disk:/data
+
+volumes:
+  redis-disk:
+    driver: local
